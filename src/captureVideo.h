@@ -26,7 +26,7 @@ int capture(string filename)
 	        if(frame.empty())
 	            break;
 
-////////////////you can use this frame for image processing.////////////
+////////////////you can use this frame for image processing.///////////
 
 	        imshow("w", frame);
 
