@@ -10,9 +10,11 @@
 using namespace cv;
 using namespace std;
 
+int largestvalue;
+String dominentColor;
 void getDominentColor(Mat image){
 
-	//this is a test funtion
+	//this is a test function
 
 	if (!image.data) {
 			cout << "No image data \n";
@@ -40,7 +42,20 @@ void getDominentColor(Mat image){
 			//cout << endl;
 			}
 
-		cout<< "blue " << bValue  << "red "<<rValue << "green " <<gValue <<endl ;
+			if(bValue>gValue){
+				largestvalue = bValue;
+				dominentColor = "blue";
+			}
+			else {
+				largestvalue = gValue;
+				dominentColor = "green";
+			}
+			if(rValue>largestvalue){
+				largestvalue = rValue;
+				dominentColor  = "red";
+			}
+
+		cout<< dominentColor<<endl;
 
 		waitKey(0);
 
