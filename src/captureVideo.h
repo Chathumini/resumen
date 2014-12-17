@@ -12,9 +12,7 @@ using namespace std;
 
 int capture(string filename)
 {
-	cout<<"started capture";
 
-	//string filename = "../videos/test.mp4";
 	    VideoCapture capture(filename);
 	    Mat frame;
 
@@ -28,6 +26,7 @@ int capture(string filename)
 	        if(frame.empty())
 	            break;
 
+////////////////you can use this frame for image processing.////////////
 
 	        imshow("w", frame);
 
