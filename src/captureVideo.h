@@ -6,6 +6,7 @@
  */
 
 #include "opencv2/opencv.hpp"
+#include "dominentColor.h"
 
 using namespace cv;
 using namespace std;
@@ -19,7 +20,7 @@ int capture(string filename)
 	    if( !capture.isOpened() )
 	        throw "Error when reading steam_mp4";
 
-	    namedWindow( "w", 1);
+	   // namedWindow( "w", 1);
 	    for( ; ; )
 	    {
 	        capture >> frame;
@@ -28,7 +29,11 @@ int capture(string filename)
 
 ////////////////you can use this frame for image processing.///////////
 
-	        imshow("w", frame);
+	        getDominentColor(frame);
+
+	        //other functions comes here//
+
+	        //imshow("w", frame);
 
 
 	        waitKey(20); // waits to display frame
